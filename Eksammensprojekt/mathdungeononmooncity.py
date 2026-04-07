@@ -11,6 +11,7 @@ def delete_title(n=1):
         sys.stdout.write("\x1b[2K")
 
 while True:
+    delete_title(2)
     print("████████╗██╗  ██╗███████╗")
     time.sleep(0.2)
     print("╚══██╔══╝██║  ██║██╔════╝")
@@ -64,4 +65,24 @@ while True:
     time.sleep(0.2)
     print("   ╚═╝   ╚═╝  ╚═╝╚══════╝    ╚═╝     ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝    ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝  ╚═══╝")
     time.sleep(1)
+    print()
+    print("                                                              --[Menu]--")
+    time.sleep(0.1)
+    print("                                                          ---START GAME[1]---")
+    time.sleep(0.1)
+    print("                                                          ---HOW TO PLAY[2]---")
+    time.sleep(0.1)
+    print("                                                            ---ABOUT US[3]---")
+    time.sleep(0.1)
+    print("                                                             ---QUIT[4]---")
+    
+    input("Please enter a valid command")
+    intro = input("").strip().lower()
+
+    if intro == "1":
+        print("")
+
+    if intro == "2":
+        delete_title(11)
+        print("The game is simple, ")
     break
