@@ -1,5 +1,6 @@
 import sys
 import time
+import random
 
 def delete_last_line():
     sys.stdout.write("\x1b[1A")
@@ -79,24 +80,26 @@ while True:
         time.sleep(0.1)
         print("                                                            ---ABOUT US[3]---")
         time.sleep(0.1)
-        print("                                                             ---QUIT[4]---")
+        print("                                                             ---QUIT[4]---\n")
     
         intro = input("Please enter a valid command: ").strip().lower()
 
         if intro == "1":
-            print("")
+            print("hello world")
 
         if intro == "2":
             while True:
-                    delete_title(14)
-                    print("The game is simple, you are given choices and must respond with valid answers or commands.\n")
-                    time.sleep(0.1)
-                    print("Commands and prompts are often shown with the following\n")
-                    time.sleep(0.1)
-                    print("[1] [2] [3]... and so on         or          [Run] [Walk] [Look behind]... and so on\n")
-                    time.sleep(0.1)
-                    print("To return to the menu screen type [Return]")
-                    time.sleep(0.1)
+                    delete_title(17)
+                    howplaytxt = [
+                    "The game is simple, you are given choices and must respond with valid answers or commands.\n",
+                    "Commands and prompts are often shown with the following\n",
+                    "[1] [2] [3]... and so on         or          [Run] [Walk] [Look behind]... and so on\n",
+                    "To return to the menu screen type [Return]\n",
+                    ]
+                    for line in howplaytxt:
+                        print(line)
+                        time.sleep(0.1)
+
                     retcom = input("").strip().lower()
                     if retcom == "return":
                         delete_title(8)
@@ -108,17 +111,18 @@ while True:
 
         if intro == "3":
             while True:
-                delete_title(14)
+                delete_title(17)
                 time.sleep(0.2)
-                print("We are two HTX students who like to explore and learn about systems, therefore we've created this game as our first text based video game\n")
-                time.sleep(0.2)
-                print("Credits:\n")
-                time.sleep(0.2)
-                print("Mitnavnstorm = Coder\n")
-                time.sleep(0.2)
-                print("Culn = Coder and story director\n")
-                time.sleep(0.2)
-                print("To return to the menu screen type [Return]")
+                abttxt = [
+                "We are two HTX students who like to explore and learn about systems, therefore we've created this game as our first text based video game\n",
+                "Credits:\n",
+                "Mitnavnstorm = Coder\n",
+                "Culn = Coder and story director\n",
+                "To return to the menu screen type [Return]\n",
+                ]
+                for line in abttxt:
+                    print(line)
+                    time.sleep(0.1)
                 retcom2 = input("").strip().lower()
                 if retcom2 == "return":
                     break
@@ -127,7 +131,7 @@ while True:
                     delete_title(6)
 
         if intro == "4":
-            delete_title(14)
+            delete_title(17)
             print("Are you sure you want to quit? [Yes/No]")
             quitpromp = input("").strip().lower()
             if quitpromp == "yes":
