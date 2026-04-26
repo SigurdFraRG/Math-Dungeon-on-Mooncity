@@ -176,8 +176,8 @@ while True:
                     time.sleep(0.2)
                 time.sleep(10)
                 awake = [
-                    "You wake up, it's dark\n",
-                    "You try to look around but to no success\n",
+                    "You wake up, your body hurts.\n",
+                    "You try to look around but to no success, it's dark.\n",
                     "What do you do? [Get up (getup)], [Look around (look)]\n",
                 ]
                 wakechoice = input("Input:  ").strip().lower()
@@ -185,7 +185,7 @@ while True:
                 if wakechoice == "getup":
                     getup = [
                         "You get up\n",
-                        "Looking for anything that might help you find a way out\n",
+                        "Trying to look for anything that might help you find a way out\n",
                         "In a corner you find a damaged flashlight\n",
                     ]
 
@@ -198,15 +198,33 @@ while True:
                         "You decide to look around again\n",
                         "Still... trying to look around again, it's too dark to see\n",
                         "However despite your futile attempt at looking around\n",
-                        "Your eye catches a glimps of something.",
-                        "You walk towards it to find a damaged flashlight",
+                        "Your eye catches a glimps of something metallic in a corner.\n",
+                        "You walk towards it to find a damaged flashlight\n",
                     ]
                     for line in look:
                         print(line)
                         time.sleep(3)
-
+                    time.sleep
                     
-
+                delete_title(50)
+                flashlight = [
+                    "As you pick up the flashlight, in hopes that it still works.\n",
+                    "You try the power button.\n",
+                    "To your surprise, the flashlight gives just enough light for you to see your surroundings\n",
+                ]
+                for line in flashlight:
+                    print(line)
+                    time.sleep(3)
+                
+                getlight = [
+                    "You return to the place where you woke up",
+                    "The light illuminates the path infront of you",
+                    "All you see is a rocky wall",
+                    "Where do you look [Right], [Left] or [Behind you]?"
+                ]
+                while True:
+                    direction = input("Input direction: ")
+                    # You left off here, the directions in while true...(see if you can break out of while true when the right one is chosen)
             if enter == "leave":
                 print("You decide to leave, not giving it another thought.")
                 time.sleep(0.5)
