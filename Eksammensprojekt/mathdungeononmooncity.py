@@ -326,7 +326,10 @@ while True:
                 for line in getlight:
                     print(line)
                     time.sleep(3)
+                time.sleep(1)
+                delete_title(50)
                 while True:
+                    print("Choose a direction [Right], [Left] or [Behind]")
                     direction = input("Input direction: ").strip().lower()
                     
                     if direction == "behind":
