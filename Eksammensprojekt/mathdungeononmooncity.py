@@ -97,7 +97,7 @@ def enemy():
             else:
                 print(f"Inccorect! the answer was {answer}, You miss your attack!")
         if boss["health"] <= 0:
-            print(f"\nThe {boss['name']} has been defeated!")
+            print(f"\nThe {boss['enemy']} has been defeated!")
             time.sleep(2.5)
             delete_title(500)
             break
@@ -314,6 +314,8 @@ while True:
                 for line in flashlight:
                     print(line)
                     time.sleep(3)
+                time.sleep(5)
+                delete_title(50)
                 
                 getlight = [
                     "You return to the place where you woke up\n",
@@ -325,7 +327,7 @@ while True:
                     print(line)
                     time.sleep(3)
                 while True:
-                    direction = input("Input direction: ")
+                    direction = input("Input direction: ").strip().lower()
                     
                     if direction == "behind":
                         lookbehind = [
@@ -338,11 +340,11 @@ while True:
                             time.sleep(3)
                         choicedoor = input("What do you do? ").strip().lower()
 
-                        if choicedoor == "Open":
+                        if choicedoor == "open":
                             print("You move slowly towards the door, being suspicous of your surroundings")
                             delete_title(100)
                             break
-                        elif choicedoor == "Looking":
+                        elif choicedoor == "looking":
                             print("You decide to keep looking.")
                             delete_title(100)
                         else:
@@ -436,7 +438,7 @@ while True:
                 
                 print("You defeat the goblin and walk away victorious!")
                 time.sleep(3)
-                print("You completed our Demo!!!")
+                print("You completed our Demo!!! ending (2/2)")
                 time.sleep(3)
                 break
 
@@ -463,6 +465,7 @@ while True:
                     "The game is simple, you are given choices and must respond with valid answers or commands.\n",
                     "Commands and prompts are often shown with the following\n",
                     "[1] [2] [3]... and so on         or          [Run] [Walk] [Look behind]... and so on\n",
+                    "In some parts of the game you might encounter a [Run around(Run)], in this instance you just write the (run) part\n",
                     "To return to the menu screen type [Return]\n",
                     ]
                     for line in howplaytxt:
