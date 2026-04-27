@@ -400,50 +400,61 @@ while True:
                     print(line)
                     time.sleep(3)
                 delete_title(100)
-
-                theroom = [
-                    "You decide to enter the room as there is no other way to go...",
-                    "Your flashligh flickers as if its trying to tell you, not to go in.",
-                    "Despite it, you continue...",
-                    "As you enter.. you feel a cold gust of wind scrape your neck.",
-                    "You hear something growling... [Run] or [Turn around(Turn)]"
-                ]
-                for line in theroom:
-                    print(line)
-                    time.sleep(3)
                 
-                bosscoming = input("What do you do? ").strip().lower()
-
-                if bosscoming == "run":
-                    bossrun = [
-                        "You try to run but swiftly feel a big meaty hand, grab you.",
-                        "You're forced into battle!",
+                while True:
+                    theroom = [
+                        "You decide to enter the room as there is no other way to go...",
+                        "Your flashligh flickers as if its trying to tell you, not to go in.",
+                        "Despite it, you continue...",
+                        "As you enter.. you feel a cold gust of wind scrape your neck.",
+                        "You hear something growling... [Run] or [Turn around(Turn)]"
                     ]
-                    for line in bossrun:
+                    for line in theroom:
                         print(line)
                         time.sleep(3)
-                    delete_title(100)
-
-                    enemy()
-
-                elif bosscoming == "turn":
-                    bossturn = [
-                        "You turn around, ready to face whatever might be behind you",
-                        "What you find is a big brute of a goblin.",
-                        "You get into fighting stance.",
-                    ]
-                    for line in bossturn:
-                        print(line)
-                        time.sleep(3)
-                    delete_title(100)
-
-                    enemy()
                 
-                print("You defeat the goblin and walk away victorious!")
-                time.sleep(3)
-                print("You completed our Demo!!! ending (2/2)")
-                time.sleep(3)
-                break
+                    bosscoming = input("What do you do? ").strip().lower()
+
+                    if bosscoming == "run":
+                        bossrun = [
+                            "You try to run but swiftly feel a big meaty hand, grab you.",
+                            "You're forced into battle!",
+                        ]
+                        for line in bossrun:
+                            print(line)
+                            time.sleep(3)
+                        delete_title(100)
+
+                        enemy()
+                        
+                        print("You defeat the goblin and walk away victorious!")
+                        time.sleep(3)
+                        print("You completed our Demo!!! ending (2/2)")
+                        time.sleep(3)
+                        break
+
+                    elif bosscoming == "turn":
+                        bossturn = [
+                            "You turn around, ready to face whatever might be behind you",
+                            "What you find is a big brute of a goblin.",
+                            "You get into fighting stance.",
+                        ]
+                        for line in bossturn:
+                            print(line)
+                            time.sleep(3)
+                        delete_title(100)
+
+                        enemy()
+
+                        print("You defeat the goblin and walk away victorious!")
+                        time.sleep(3)
+                        print("You completed our Demo!!! ending (2/2)")
+                        time.sleep(3)
+                        break
+                    
+                    else:
+                        print("Incorrect input please try again")
+                
 
             if enter == "leave":
                 print("You decide to leave, not giving it another thought.")
