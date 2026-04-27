@@ -11,6 +11,18 @@ def delete_title(n=1):
         sys.stdout.write("\x1b[1A")
         sys.stdout.write("\x1b[2K")
 
+boss = {
+    "enemy": "goblin",
+    "health": 20,
+    "max_health": 20,
+}
+# dictionary for python (husker det som en ordbog)
+
+attacks = {
+    "latk": {"damage": 1, "hit_chance": 0.994}, #dict inside dict, with hit chance 99.4%
+    "matk": {"damage": 2, "hit_chance": 0.6723}, # 67.23%
+    "hatk": {"damage": 3, "hit_chance": 0.3045}, # 30.45%
+}
 
 delete_title(3)
 thetext = [
@@ -174,12 +186,16 @@ while True:
                 for line in titledrop:
                     print(line)
                     time.sleep(0.2)
-                time.sleep(10)
+                
                 awake = [
                     "You wake up, your body hurts.\n",
                     "You try to look around but to no success, it's dark.\n",
                     "What do you do? [Get up (getup)], [Look around (look)]\n",
                 ]
+                for line in awake:
+                    print(line)
+                    time.sleep(3)
+
                 wakechoice = input("Input:  ").strip().lower()
 
                 if wakechoice == "getup":
@@ -220,11 +236,75 @@ while True:
                     "You return to the place where you woke up\n",
                     "The light illuminates the path infront of you\n",
                     "All you see is a rocky wall\n",
-                    "Where do you look [Right], [Left] or [Behind you]?\n"
+                    "Where do you look [Right], [Left] or [Behind]?\n"
                 ]
+                for line in getlight:
+                    print(line)
+                    time.sleep(3)
                 while True:
                     direction = input("Input direction: ")
-                    # You left off here, the directions in while true...(see if you can break out of while true when the right one is chosen)
+                    
+                    if direction == "behind":
+                        lookbehind = [
+                            "You look behind you, flashing the dim light at whatever may lay before you.\n",
+                            "You see the faint trace of a door\n",
+                            "You think... Should i open it? [Open], [Keep Looking (Looking)]\n"
+                        ]
+                        for line in lookbehind:
+                            print(line)
+                            time.sleep(3)
+                        choicedoor = input("What do you do? ")
+
+                        if choicedoor == "Open":
+                            print("You move slowly towards the door, being suspicous of your surroundings")
+                            delete_title(100)
+                            break
+                        elif choicedoor == "Looking":
+                            print("You decide to keep looking.")
+                            delete_title(100)
+                        else:
+                            print("Input invalid, try again")
+                            delete_title(100)
+                    elif direction == "right":
+                        rightlook = [
+                            "You decide to look to your right.",
+                            "With the little light from your flashlight, you make out a torch hanging from the wall"
+                            "Nothing much to see..."
+                        ]
+                        for line in rightlook:
+                            print(line)
+                            time.sleep(3)
+                        delete_title(100)
+                    elif direction == "left":
+                        leftlook = [
+                            "You look to your left..."
+                            "It's just a wall..."
+                        ]
+                        for line in leftlook:
+                            print(line)
+                            time.sleep(3)
+                        delete_title(100)
+                    else:
+                        print("Input invalid, try again")
+                        delete_title(100)
+                print("As you get closer to the door, you see...")
+                time.sleep(3)
+                delete_title(100)
+                thedoor = [
+                    "████████╗██╗  ██╗███████╗    ██████╗  ██████╗  ██████╗ ██████╗ ",
+                    "╚══██╔══╝██║  ██║██╔════╝    ██╔══██╗██╔═══██╗██╔═══██╗██╔══██╗",
+                    "   ██║   ███████║█████╗      ██║  ██║██║   ██║██║   ██║██████╔╝",
+                    "   ██║   ██╔══██║██╔══╝      ██║  ██║██║   ██║██║   ██║██╔══██╗",
+                    "   ██║   ██║  ██║███████╗    ██████╔╝╚██████╔╝╚██████╔╝██║  ██║",
+                    "   ╚═╝   ╚═╝  ╚═╝╚══════╝    ╚═════╝  ╚═════╝  ╚═════╝ ╚═╝  ╚═╝",
+                ]
+                for line in thedoor:
+                    print(line)
+                    time.sleep(0.2)
+                
+
+                #While true here
+
             if enter == "leave":
                 print("You decide to leave, not giving it another thought.")
                 time.sleep(0.5)
@@ -300,6 +380,4 @@ while True:
         else:
             print("Invalid Input please try again")
             time.sleep(2)
-            delete_title(33)
-
-            
+            delete_title(33)    
