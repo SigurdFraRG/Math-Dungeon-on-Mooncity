@@ -217,10 +217,10 @@ while True:
                     time.sleep(3)
                 
                 getlight = [
-                    "You return to the place where you woke up",
-                    "The light illuminates the path infront of you",
-                    "All you see is a rocky wall",
-                    "Where do you look [Right], [Left] or [Behind you]?"
+                    "You return to the place where you woke up\n",
+                    "The light illuminates the path infront of you\n",
+                    "All you see is a rocky wall\n",
+                    "Where do you look [Right], [Left] or [Behind you]?\n"
                 ]
                 while True:
                     direction = input("Input direction: ")
